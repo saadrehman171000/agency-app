@@ -17,7 +17,7 @@ const Footer = () => {
             <h1 className="font-bold">Agency</h1>
             <div className="flex flex-col text-slate-400">
               <h1>support@agency.com</h1>
-              <h1>+92 334 4202596</h1>
+              <h1>+92 123456789</h1>
             </div>
             <div className="flex gap-8">
               <LinkedInLogoIcon className="hover:text-yellow-400 cursor-pointer" />
