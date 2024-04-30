@@ -78,6 +78,12 @@ const Navbar = () => {
             >
               CONTACT
             </Link>
+            <Link
+              className={`${pathname === "/blog" ? "font-bold" : "text-black"}`}
+              href={"/blog"}
+            >
+              BLOG
+            </Link>
           </div>
         </div>
         <div className="block md:hidden">
@@ -126,6 +132,14 @@ const Navbar = () => {
                   href={"/contact"}
                 >
                   CONTACT
+                </Link>
+                <Link
+                  className={`${
+                    pathname === "/blog" ? "font-bold" : "text-black"
+                  }`}
+                  href={"/blog"}
+                >
+                  BLOG
                 </Link>
               </div>
             </SheetContent>
