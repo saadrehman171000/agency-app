@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import image from "@/public/ser2.webp";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const ServicesCard = () => {
   return (
@@ -22,7 +23,9 @@ const ServicesCard = () => {
           deleniti tenetur nemo? Illo, magnam.
         </h1>
         <div className="flex items-center justify-between gap-44">
-          <Button>Avail Service</Button>
+          <Button>
+            <Link href="/quotation">Avail Service</Link>
+          </Button>
           <h1 className="font-extrabold text-xl">$299</h1>
         </div>
       </div>
