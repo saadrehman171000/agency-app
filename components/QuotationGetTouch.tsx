@@ -34,11 +34,13 @@ const QuotaionGetTouch = () => {
                 type="text"
                 placeholder="First Name"
                 className="placeholder:text-white text-white "
+                required
               />
               <Input
                 type="text"
                 placeholder="Last Name"
                 className="placeholder:text-white text-white "
+                required
               />
             </div>
             <div className="flex flex-col items-start justify-start">
@@ -48,6 +50,7 @@ const QuotaionGetTouch = () => {
               type="email"
               placeholder="abc@abc.com"
               className="placeholder:text-white text-white"
+              required
             />
             <div className="flex flex-col items-start justify-start">
               <h1 className="text-white">Phone</h1>
@@ -56,6 +59,7 @@ const QuotaionGetTouch = () => {
               type="phone"
               placeholder="+123456"
               className="placeholder:text-white text-white"
+              required
             />
             <div className="flex flex-col items-start justify-start">
               <h1 className="text-white">
@@ -73,6 +77,7 @@ const QuotaionGetTouch = () => {
             <Input
               type="number"
               className="placeholder:text-white text-white"
+              required
             />
 
             <div className="flex flex-col items-start justify-start text-sm md:text-md">
