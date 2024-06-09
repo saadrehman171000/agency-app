@@ -1,5 +1,6 @@
 "use client";
 // Navbar.jsx
+// Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -41,6 +42,15 @@ const Navbar = () => {
     { name: "Service 3", link: "/service3" },
   ];
 
+  // Handle mouse enter and leave for showing/hiding dropdown
+  const handleMouseEnter = () => {
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowDropdown(false);
+  };
+
   return (
     <div
       className={`p-5 px-10 w-full font-extralight fixed z-10 ${
@@ -71,16 +81,17 @@ const Navbar = () => {
             </Link>
             <div
               className="relative"
-              onMouseEnter={() => setShowDropdown(true)}
-              onMouseLeave={() => setShowDropdown(false)}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
-              <button
+              <Link
                 className={`${
                   pathname === "/services" ? "font-bold" : "text-black"
                 }`}
+                href={"/services"}
               >
                 SERVICES
-              </button>
+              </Link>
               {showDropdown && <Dropdown services={services} />}
             </div>
             <Link
@@ -140,8 +151,8 @@ const Navbar = () => {
                 </Link>
                 <div
                   className="relative"
-                  onMouseEnter={() => setShowDropdown(true)}
-                  onMouseLeave={() => setShowDropdown(false)}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <button>Services</button>
                   {showDropdown && <Dropdown services={services} />}
