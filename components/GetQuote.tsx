@@ -15,4 +15,5 @@ const GetQuote = () => {
   );
 };
 
+
 export default GetQuote;
