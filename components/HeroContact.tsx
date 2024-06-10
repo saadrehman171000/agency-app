@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 
 const HeroContact = () => {
@@ -8,7 +9,7 @@ const HeroContact = () => {
           Contact us
         </h1>
         <h1 className="font-extrabold tracking-tighter text-3xl md:text-5xl border-b-8 border-yellow-500 py-2">
-          "We&apos;d love to hear from you"
+          We&apos;d love to hear from you
         </h1>
       </div>
     </div>
