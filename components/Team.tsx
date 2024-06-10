@@ -21,7 +21,7 @@ const Team = () => {
   const brands = [p1, p3, p1, p3];
 
   return (
-    <div className="max-w-7xl mx-auto p-5 px-10 w-full mt-20">
+    <div className="max-w-7xl mx-auto p-5 px-14 w-full mt-20 ">
       <div className="flex flex-col items-start justify-center gap-3">
         <h1 className="font-extrabold text-xl md:text-2xl tracking-tighter border-b-4 border-yellow-500 py-2">
           Team

@@ -3,7 +3,7 @@ import ServicesCard from "./ServicesCard";
 
 const HeroServices = () => {
   return (
-    <div className="max-w-7xl mx-auto w-full p-5 px-10 mt-32">
+    <div className="max-w-7xl mx-auto p-5 px-10 mt-32">
       <div className="flex flex-col items-center justify-center gap-2 ">
         <h1 className="font-extrabold tracking-tighter text-lg md:text-xl">
           Services

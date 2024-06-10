@@ -1,6 +1,5 @@
 "use client";
-// Navbar.jsx
-// Navbar.jsx
+
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -42,7 +41,6 @@ const Navbar = () => {
     { name: "Service 3", link: "/service3" },
   ];
 
-  // Handle mouse enter and leave for showing/hiding dropdown
   const handleMouseEnter = () => {
     setShowDropdown(true);
   };
@@ -64,7 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden md:block">
-          <div className="flex gap-10 relative">
+          <div className="flex items-center justify-center gap-10 relative">
             <Link
               className={`${pathname === "/" ? "font-bold" : "text-black"}`}
               href={"/"}
@@ -108,14 +106,14 @@ const Navbar = () => {
             >
               BLOG
             </Link>
-            {pathname === "/services" && (
-              <Button
-                onClick={handleScrollToBottom}
-                className="text-white font-bold"
-              >
-                Request to Get Quote
-              </Button>
-            )}
+
+            <Link
+              href={"/services"}
+              onClick={handleScrollToBottom}
+              className="text-white font-bold"
+            >
+              Request to Get Quote
+            </Link>
           </div>
         </div>
         <div className="block md:hidden">
@@ -154,7 +152,7 @@ const Navbar = () => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <button>Services</button>
+                  <button>SERVICES</button>
                   {showDropdown && <Dropdown services={services} />}
                 </div>
                 <Link
