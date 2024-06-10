@@ -158,7 +158,14 @@ const Navbar = () => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <button>SERVICES</button>
+                  <Link
+                    className={`${
+                      pathname === "/services" ? "font-bold" : "text-black"
+                    }`}
+                    href={"/services"}
+                  >
+                    SERVICES
+                  </Link>
                   {showDropdown && <Dropdown services={services} />}
                 </div>
                 <Link
