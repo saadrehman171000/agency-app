@@ -66,7 +66,7 @@ const GetTouch = () => {
                 <Phone className="bg-yellow-500 rounded-full px-2 py-1 h-[40px] w-[40px]" />
               </div>
               <div className="flex flex-col items-start justify-center">
-                <h1 className="font-bold tracking-tighter">+92 334 4202596</h1>
+                <h1 className="font-bold tracking-tighter">+92 312 3456789</h1>
                 <p className="text-gray-500 tracking-tighter">
                   Help phone support
                 </p>
