@@ -40,7 +40,7 @@ const QuotaionGetTouch = () => {
     console.log(form.formState.errors);
   }
   return (
-    <div className="max-w-7xl mx-auto px-10 p-5">
+    <div id="quote-form" className="max-w-7xl mx-auto px-10 p-5">
       <div className="flex flex-col items-center justify-center gap-2 md:mb-3 mb-3">
         <h1 className="font-extrabold tracking-tighter text-3xl md:text-3xl border-b-8 border-yellow-500 py-2">
           Fill Out The Form To Get Quote

@@ -9,12 +9,18 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "../ui/button";
 import Dropdown from "../Dropdown";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const TOP_OFFSET = 0;
+  const router = useRouter();
   const pathname = usePathname();
   const [showBackground, setShowBackground] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const navigateToServicesAndScroll = (e: any) => {
+    e.preventDefault();
+    router.push("/services#quote-form");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,9 +114,9 @@ const Navbar = () => {
             </Link>
 
             <Link
-              href={"/services"}
-              onClick={handleScrollToBottom}
-              className="text-white font-bold"
+              href="/services"
+              onClick={navigateToServicesAndScroll}
+              className="text-white px-3 py-2 font-bold bg-black rounded-md hover:bg-black hover:opacity-80 hover:text-white"
             >
               Request to Get Quote
             </Link>
@@ -171,14 +177,14 @@ const Navbar = () => {
                 >
                   BLOG
                 </Link>
-                {pathname === "/services" && (
-                  <Button
-                    onClick={handleScrollToBottom}
-                    className="text-black font-bold"
-                  >
-                    Request to Get Quote
-                  </Button>
-                )}
+
+                <Link
+                  href="/services"
+                  onClick={navigateToServicesAndScroll}
+                  className="text-white px-3 py-2 font-bold bg-black rounded-md hover:bg-black hover:opacity-80 hover:text-white"
+                >
+                  Request to Get Quote
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

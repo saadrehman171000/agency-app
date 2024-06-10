@@ -1,29 +1,28 @@
-// Dropdown.tsx
 import React from "react";
-
-// Define the structure of a single service object
+import Link from "next/link";
 type Service = {
   name: string;
   link: string;
 };
 
-// Define the props expected by the Dropdown component
 type DropdownProps = {
   services: Service[];
 };
 
-// Functional component using de-structured props with explicit types
 const Dropdown: React.FC<DropdownProps> = ({ services }) => {
+  if (!services || services.length === 0) {
+    return null; // Return null if no services are passed
+  }
   return (
-    <div className="absolute top-full mt-1 w-56 bg-white shadow-lg z-10">
+    <div className="absolute z-20 bg-white shadow-md rounded p-2 mt-2">
       {services.map((service, index) => (
-        <a
+        <Link
           key={index}
           href={service.link}
-          className="block px-4 py-2 text-sm text-black"
+          className="block p-2 hover:bg-gray-100"
         >
           {service.name}
-        </a>
+        </Link>
       ))}
     </div>
   );
