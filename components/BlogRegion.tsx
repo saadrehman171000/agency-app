@@ -8,10 +8,22 @@ const BlogRegion = () => {
       <Input placeholder="Search" />
 
       <div className="flex flex-col gap-10 items-center justify-center md:grid md:grid-cols-2 md:gap-20 mt-10 px-20 py-20">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        <BlogCard
+          date="November 16,2023"
+          description="Time tracking reports-why do you need time management"
+        />
+        <BlogCard
+          date="November 16,2023"
+          description="Time tracking reports-why do you need time management"
+        />
+        <BlogCard
+          date="November 16,2023"
+          description="Time tracking reports-why do you need time management"
+        />
+        <BlogCard
+          date="November 16,2023"
+          description="Time tracking reports-why do you need time management"
+        />
       </div>
     </div>
   );

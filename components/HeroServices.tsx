@@ -13,9 +13,18 @@ const HeroServices = () => {
         </h1>
       </div>
       <div className="flex flex-col items-center justify-center gap-10 md:gap-2 mt-10">
-        <ServicesCard />
-        <ServicesCard />
-        <ServicesCard />
+        <ServicesCard
+          title="Final Expense Leads"
+          description="Final expense leads are prospective customers interested in purchasing insurance designed to cover funeral and burial expenses. These leads consist of individuals actively seeking financial protection for end-of-life costs."
+        />
+        <ServicesCard
+          title="Medicare Leads"
+          description="Medicare leads are prospects who have expressed interest in obtaining information or services related to Medicare, a federal health insurance program in the United States primarily for individuals aged 65 and older. These leads often include individuals seeking Medicare Advantage plans, Medicare Supplement Insurance (Medigap), or information about Medicare enrollment."
+        />
+        <ServicesCard
+          title="ACA Leads​​"
+          description="ACA leads denote individuals actively seeking health insurance coverage under the Affordable Care Act, commonly referred to as Obamacare. These leads encompass those exploring information about health insurance marketplaces, subsidies, and available options under the ACA."
+        />
       </div>
     </div>
   );

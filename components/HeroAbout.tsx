@@ -15,12 +15,12 @@ const HeroAbout = () => {
           </h1>
         </div>
         <p className="max-w-xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          nobis excepturi, repudiandae et cupiditate odit sequi explicabo ab ea
-          nemo eius perspiciatis, commodi culpa ut exercitationem quasi dolores
-          laboriosam officia distinctio possimus, quidem quisquam. Aspernatur
-          earum facilis rerum excepturi cum nobis eos. Suscipit veniam nobis
-          ratione illum magnam laborum officiis.
+          At US Leads Agency, our dynamic team of professionals shares a passion
+          for excellence. Our diverse backgrounds and expertise create a
+          cohesive unit dedicated to helping businesses succeed. We believe our
+          strength lies in the relationships we build and the trust we earn from
+          our valued clients. Learn more about the individuals driving our
+          success and the values that define us.
         </p>
       </div>
 
