@@ -163,8 +163,12 @@ const QuotaionGetTouch = () => {
                       <Input
                         type="number"
                         placeholder="Enter the number of leads you are looking to get"
-                        {...field}
-                        className="placeholder:text-slate-400 "
+                        value={field.value}
+                        onChange={(e) => {
+                          const value = parseInt(e.target.value, 10);
+                          field.onChange(value);
+                        }}
+                        className="placeholder:text-slate-400"
                       />
                     </FormControl>
                     <FormMessage>{error?.message}</FormMessage>
