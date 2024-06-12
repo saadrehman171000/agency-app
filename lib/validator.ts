@@ -10,7 +10,7 @@ export const getQuoteSchema = z.object({
     .string()
     .regex(/^\+?\d+$/, { message: "Please enter a valid phone number" })
     .min(11, "Please enter complete phone Number"),
-  services: z.enum(["Service Type 1", "Service Type 2", "Service Type 3"], {
+  services: z.enum(["Service_Type_1", "Service_Type_2", "Service_Type_3"], {
     required_error: "Please select at least one service",
   }),
   NoOfServices: z

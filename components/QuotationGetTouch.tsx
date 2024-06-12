@@ -1,10 +1,8 @@
 "use client";
 import React from "react";
 import { Button } from "./ui/button";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
 import { Textarea } from "./ui/textarea";
 import {
   Form,
@@ -29,16 +27,44 @@ const QuotaionGetTouch = () => {
     comments: "",
   };
 
-  const form = useForm<z.infer<typeof getQuoteSchema>>({
+  const form = useForm({
     resolver: zodResolver(getQuoteSchema),
     defaultValues: initialValues,
     mode: "onSubmit",
   });
 
-  function onSubmit(values: z.infer<typeof getQuoteSchema>) {
-    console.log(values);
-    console.log(form.formState.errors);
+  async function onSubmit(values: any) {
+    try {
+      const response = await fetch("/api/quotation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Something went wrong");
+      }
+
+      form.reset({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        services: undefined,
+        NoOfServices: 0,
+        comments: "",
+      });
+
+      alert("Quote submitted successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to submit quote");
+    }
   }
+
   return (
     <div id="quote-form" className="max-w-7xl mx-auto px-10 p-5">
       <div className="flex flex-col items-center justify-center gap-2 md:mb-3 mb-3">
@@ -141,9 +167,9 @@ const QuotaionGetTouch = () => {
                         className="placeholder:text-slate-400 text-black border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       >
                         <option value="">Select a Service</option>
-                        <option value="Service Type 1">Service Type 1</option>
-                        <option value="Service Type 2">Service Type 2</option>
-                        <option value="Service Type 3">Service Type 3</option>
+                        <option value="Service_Type_1">Service Type 1</option>
+                        <option value="Service_Type_2">Service Type 2</option>
+                        <option value="Service_Type_3">Service Type 3</option>
                       </select>
                     </FormControl>
                     <FormMessage>{error?.message}</FormMessage>

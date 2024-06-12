@@ -40,9 +40,35 @@ const GetTouch = () => {
     mode: "onSubmit",
   });
 
-  function onSubmit(values: z.infer<typeof getTouchSchema>) {
-    console.log(values);
-    console.log(form.formState.errors);
+  async function onSubmit(values: any) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Something went wrong");
+      }
+
+      form.reset({
+        fullName: "",
+
+        email: "",
+        phone: "",
+
+        message: "",
+      });
+
+      alert("Quote submitted successfully!");
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to submit quote");
+    }
   }
 
   return (
