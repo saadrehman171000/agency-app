@@ -1,33 +1,8 @@
-import nodemailer from "nodemailer";
+// pages/api/contact.js
+
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/db";
-
-// Configure your SMTP server details
-const transporter = nodemailer.createTransport({
-  host: "your-smtp-host", // Example: "smtp.example.com"
-  port: 587, // Example: 587 for TLS, 465 for SSL
-  secure: false, // Set to true if using SSL
-  auth: {
-    user: "your-smtp-username",
-    pass: "your-smtp-password",
-  },
-});
-
-async function sendEmail(email: any, fullName: any) {
-  try {
-    await transporter.sendMail({
-      from: "your-sender-email",
-      to: email,
-      subject: "Thank you for your submission",
-      text: `Dear ${fullName},\n\nThank you for submitting the form.`,
-    });
-    console.log("Email sent successfully");
-    return true;
-  } catch (error) {
-    console.error("Error sending email:", error);
-    return false;
-  }
-}
+import nodemailer from 'nodemailer';
 
 export async function POST(req: NextRequest) {
   try {
@@ -42,14 +17,25 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const emailSent = await sendEmail(email, fullName);
+    // Nodemailer setup using environment variables
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_ADDRESS,
+        pass: process.env.EMAIL_PASSWORD,  // Use the app-specific password if 2FA is enabled
+      },
+    });
 
-    if (!emailSent) {
-      return NextResponse.json(
-        { error: "Failed to send confirmation email" },
-        { status: 500 }
-      );
-    }
+    // Send confirmation email
+    const mailOptions = {
+      from: process.env.EMAIL_ADDRESS,
+      to: email,
+      subject: 'Contact Form Submission Confirmation',
+      text: `Thank you, ${fullName}, for reaching out to us. We have received your message and will get back to you shortly.`,
+      html: `<p>Thank you, <strong>${fullName}</strong>, for reaching out to us. We have received your message and will get back to you shortly.</p>`,
+    };
+
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
       { contact: newContact, success: true },

@@ -57,14 +57,12 @@ const GetTouch = () => {
 
       form.reset({
         fullName: "",
-
         email: "",
         phone: "",
-
         message: "",
       });
 
-      alert("Quote submitted successfully!");
+      alert("Contact submitted successfully!");
     } catch (error) {
       console.error("Error:", error);
       alert("Failed to submit quote");
@@ -72,9 +70,9 @@ const GetTouch = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-10 w-full p-5 md:mt-10">
-      <div className="flex flex-col md:flex-row items-center justify-center md:items-center md:justify-between px-32">
-        <div className="flex flex-col items-center gap-10 justify-center px-20 py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full p-5 md:mt-10">
+      <div className="flex flex-col md:flex-row items-center justify-center md:items-center md:justify-between px-4 sm:px-6 lg:px-36">
+        <div className="flex flex-col items-center gap-10 justify-center px-4 sm:px-6 lg:px-8 py-20">
           <div className="flex flex-col items-center justify-center gap-10">
             <h1 className="font-extrabold tracking-tighter text-2xl md:text-3xl border-b-4 border-yellow-500 py-2">
               Get in touch
@@ -126,18 +124,18 @@ const GetTouch = () => {
             </div>
           </div>
         </div>
-        <div className="bg-slate-900 px-24 py-24">
-          <div className="flex flex-col items-center justify-center gap-10">
+        <div className="bg-slate-900 px-24 py-16 md:px-24 md:py-24">
+          <div className="flex flex-col items-center justify-center gap-28">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-8"
+                className="space-y-11"
               >
                 <FormField
                   control={form.control}
                   name="fullName"
                   render={({ field, fieldState: { error } }) => (
-                    <FormItem>
+                    <FormItem className="relative">
                       <FormLabel className="font-bold text-white">
                         Full Name *
                       </FormLabel>
@@ -146,10 +144,12 @@ const GetTouch = () => {
                           type="text"
                           placeholder="Full Name"
                           {...field}
-                          className="placeholder:text-slate-400 text-white w-[200px] md:w-[200px]"
+                          className="placeholder:text-slate-400 text-white w-full max-w-md"
                         />
                       </FormControl>
-                      <FormMessage>{error?.message}</FormMessage>
+                      <FormMessage className="absolute text-red-500 text-sm -bottom-6">
+                        {error?.message}
+                      </FormMessage>
                     </FormItem>
                   )}
                 />
@@ -157,7 +157,7 @@ const GetTouch = () => {
                   control={form.control}
                   name="email"
                   render={({ field, fieldState: { error } }) => (
-                    <FormItem>
+                    <FormItem className="relative">
                       <FormLabel className="font-bold text-white">
                         Email *
                       </FormLabel>
@@ -166,10 +166,12 @@ const GetTouch = () => {
                           type="email"
                           placeholder="Email"
                           {...field}
-                          className="placeholder:text-slate-400 text-white w-[200px] md:w-[200px]"
+                          className="placeholder:text-slate-400 text-white w-full max-w-md"
                         />
                       </FormControl>
-                      <FormMessage>{error?.message}</FormMessage>
+                      <FormMessage className="absolute text-red-500 text-sm -bottom-6">
+                        {error?.message}
+                      </FormMessage>
                     </FormItem>
                   )}
                 />
@@ -177,7 +179,7 @@ const GetTouch = () => {
                   control={form.control}
                   name="phone"
                   render={({ field, fieldState: { error } }) => (
-                    <FormItem>
+                    <FormItem className="relative">
                       <FormLabel className="font-bold text-white">
                         Phone *
                       </FormLabel>
@@ -186,10 +188,12 @@ const GetTouch = () => {
                           type="phone"
                           placeholder="Phone"
                           {...field}
-                          className="placeholder:text-slate-400 text-white w-[200px] md:w-[200px]"
+                          className="placeholder:text-slate-400 text-white w-full max-w-md"
                         />
                       </FormControl>
-                      <FormMessage>{error?.message}</FormMessage>
+                      <FormMessage className="absolute text-red-500 text-sm -bottom-10">
+                        {error?.message}
+                      </FormMessage>
                     </FormItem>
                   )}
                 />
@@ -197,7 +201,7 @@ const GetTouch = () => {
                   control={form.control}
                   name="message"
                   render={({ field, fieldState: { error } }) => (
-                    <FormItem>
+                    <FormItem className="relative">
                       <FormLabel className="font-bold text-white">
                         Message *
                       </FormLabel>
@@ -205,16 +209,18 @@ const GetTouch = () => {
                         <Textarea
                           placeholder="Message"
                           {...field}
-                          className="placeholder:text-slate-400 text-white w-[200px] md:w-[200px]"
+                          className="placeholder:text-slate-400 text-white w-full max-w-md"
                         />
                       </FormControl>
-                      <FormMessage>{error?.message}</FormMessage>
+                      <FormMessage className="absolute text-red-500 text-sm -bottom-6">
+                        {error?.message}
+                      </FormMessage>
                     </FormItem>
                   )}
                 />
                 <Button
                   type="submit"
-                  className="bg-yellow-500 text-black hover:bg-yellow-500 hover:opacity-80"
+                  className="bg-yellow-500 text-black hover:bg-yellow-500 hover:opacity-80 w-full max-w-md"
                 >
                   {form.formState.isSubmitting ? "Submitting..." : "Submit"}
                 </Button>

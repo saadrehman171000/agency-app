@@ -7,7 +7,6 @@ import { Textarea } from "./ui/textarea";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -48,15 +47,7 @@ const QuotaionGetTouch = () => {
         throw new Error(errorData.message || "Something went wrong");
       }
 
-      form.reset({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        services: undefined,
-        NoOfServices: 0,
-        comments: "",
-      });
+      form.reset(initialValues);
 
       alert("Quote submitted successfully!");
     } catch (error) {
@@ -66,7 +57,7 @@ const QuotaionGetTouch = () => {
   }
 
   return (
-    <div id="quote-form" className="max-w-7xl mx-auto px-10 p-5">
+    <div id="quote-form" className="max-w-7xl mx-auto px-10 py-5">
       <div className="flex flex-col items-center justify-center gap-2 md:mb-3 mb-3">
         <h1 className="font-extrabold tracking-tighter text-3xl md:text-3xl border-b-8 border-yellow-500 py-2">
           Fill Out The Form To Get Quote
@@ -75,23 +66,28 @@ const QuotaionGetTouch = () => {
 
       <div className="flex flex-col items-center justify-center gap-4 mt-20 mb-32">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <div className="flex gap-10 items-center justify-center">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 w-full"
+          >
+            <div className="flex gap-10 items-center justify-center w-full">
               <FormField
                 control={form.control}
                 name="firstName"
                 render={({ field, fieldState: { error } }) => (
-                  <FormItem>
-                    <FormLabel className="font-bold ">First Name *</FormLabel>
+                  <FormItem className="w-full">
+                    <FormLabel className="font-bold">First Name *</FormLabel>
                     <FormControl>
                       <Input
                         type="text"
                         placeholder="First Name"
                         {...field}
-                        className="placeholder:text-slate-400 "
+                        className="placeholder:text-slate-400 w-full"
                       />
                     </FormControl>
-                    <FormMessage>{error?.message}</FormMessage>
+                    <FormMessage className="text-red-500 text-sm">
+                      {error?.message}
+                    </FormMessage>
                   </FormItem>
                 )}
               />
@@ -100,17 +96,19 @@ const QuotaionGetTouch = () => {
                 control={form.control}
                 name="lastName"
                 render={({ field, fieldState: { error } }) => (
-                  <FormItem>
-                    <FormLabel className="font-bold ">Last Name *</FormLabel>
+                  <FormItem className="w-full">
+                    <FormLabel className="font-bold">Last Name *</FormLabel>
                     <FormControl>
                       <Input
                         type="text"
                         placeholder="Last Name"
                         {...field}
-                        className="placeholder:text-slate-400"
+                        className="placeholder:text-slate-400 w-full"
                       />
                     </FormControl>
-                    <FormMessage>{error?.message}</FormMessage>
+                    <FormMessage className="text-red-500 text-sm">
+                      {error?.message}
+                    </FormMessage>
                   </FormItem>
                 )}
               />
@@ -120,16 +118,18 @@ const QuotaionGetTouch = () => {
               name="email"
               render={({ field, fieldState: { error } }) => (
                 <FormItem>
-                  <FormLabel className="font-bold ">Email *</FormLabel>
+                  <FormLabel className="font-bold">Email *</FormLabel>
                   <FormControl>
                     <Input
                       type="email"
                       placeholder="Email"
                       {...field}
-                      className="placeholder:text-slate-400 "
+                      className="placeholder:text-slate-400 w-full"
                     />
                   </FormControl>
-                  <FormMessage>{error?.message}</FormMessage>
+                  <FormMessage className="text-red-500 text-sm">
+                    {error?.message}
+                  </FormMessage>
                 </FormItem>
               )}
             />
@@ -139,32 +139,34 @@ const QuotaionGetTouch = () => {
               name="phone"
               render={({ field, fieldState: { error } }) => (
                 <FormItem>
-                  <FormLabel className="font-bold ">Phone *</FormLabel>
+                  <FormLabel className="font-bold">Phone *</FormLabel>
                   <FormControl>
                     <Input
                       type="phone"
                       placeholder="Phone"
                       {...field}
-                      className="placeholder:text-slate-400 "
+                      className="placeholder:text-slate-400 w-full"
                     />
                   </FormControl>
-                  <FormMessage>{error?.message}</FormMessage>
+                  <FormMessage className="text-red-500 text-sm">
+                    {error?.message}
+                  </FormMessage>
                 </FormItem>
               )}
             />
-            <div className="flex items-center justify-center gap-16">
+            <div className="flex items-center justify-center gap-16 w-full">
               <FormField
                 control={form.control}
                 name="services"
                 render={({ field, fieldState: { error } }) => (
-                  <FormItem className="flex flex-col gap-2">
+                  <FormItem className="flex flex-col gap-2 w-full">
                     <FormLabel className="font-bold text-black">
                       Services *
                     </FormLabel>
                     <FormControl>
                       <select
                         {...field}
-                        className="placeholder:text-slate-400 text-black border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        className="placeholder:text-slate-400 text-black border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full"
                       >
                         <option value="">Select a Service</option>
                         <option value="Service_Type_1">Service Type 1</option>
@@ -172,7 +174,9 @@ const QuotaionGetTouch = () => {
                         <option value="Service_Type_3">Service Type 3</option>
                       </select>
                     </FormControl>
-                    <FormMessage>{error?.message}</FormMessage>
+                    <FormMessage className="text-red-500 text-sm">
+                      {error?.message}
+                    </FormMessage>
                   </FormItem>
                 )}
               />
@@ -181,8 +185,8 @@ const QuotaionGetTouch = () => {
                 control={form.control}
                 name="NoOfServices"
                 render={({ field, fieldState: { error } }) => (
-                  <FormItem>
-                    <FormLabel className="font-bold ">
+                  <FormItem className="w-full">
+                    <FormLabel className="font-bold">
                       Leads/Services *
                     </FormLabel>
                     <FormControl>
@@ -194,10 +198,12 @@ const QuotaionGetTouch = () => {
                           const value = parseInt(e.target.value, 10);
                           field.onChange(value);
                         }}
-                        className="placeholder:text-slate-400"
+                        className="placeholder:text-slate-400 w-full"
                       />
                     </FormControl>
-                    <FormMessage>{error?.message}</FormMessage>
+                    <FormMessage className="text-red-500 text-sm">
+                      {error?.message}
+                    </FormMessage>
                   </FormItem>
                 )}
               />
@@ -208,22 +214,24 @@ const QuotaionGetTouch = () => {
               name="comments"
               render={({ field, fieldState: { error } }) => (
                 <FormItem>
-                  <FormLabel className="font-bold ">Comments *</FormLabel>
+                  <FormLabel className="font-bold">Comments *</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Comments if any"
                       {...field}
-                      className="placeholder:text-slate-400 "
+                      className="placeholder:text-slate-400 w-full"
                     />
                   </FormControl>
-                  <FormMessage>{error?.message}</FormMessage>
+                  <FormMessage className="text-red-500 text-sm">
+                    {error?.message}
+                  </FormMessage>
                 </FormItem>
               )}
             />
 
             <Button
               type="submit"
-              className="bg-yellow-500 text-black hover:bg-yellow-500 hover:opacity-80"
+              className="bg-yellow-500 text-black hover:bg-yellow-500 hover:opacity-80 w-full"
             >
               {form.formState.isSubmitting ? "Submitting..." : "Submit"}
             </Button>
