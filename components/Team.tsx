@@ -17,8 +17,11 @@ import {
   LinkedInLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import userIcon from "../public/user.png";
+import { User2Icon } from "lucide-react";
+
 const Team = () => {
-  const brands = [p1, p3, p1, p3];
+  const brands = [p1];
 
   return (
     <div className="max-w-7xl mx-auto p-5 px-14 w-full mt-20 ">
@@ -30,24 +33,20 @@ const Team = () => {
           Amazing team <br /> members
         </h1>
       </div>
-      <div className="mt-10">
-        <Carousel className="-z-10">
-          <CarouselContent className="-ml-1">
+      <div className="mt-10 ">
+        <Carousel className="-z-10 ">
+          <CarouselContent className="-ml-1   ">
             {brands.map((image, index) => (
               <CarouselItem
                 key={index}
-                className="pl-1 md:basis-1/2 lg:basis-1/3"
+                className="pl-1 md:basis-1/2 lg:basis-1/3 "
               >
                 <div className="p-1">
-                  <Card className="max-h-[500px]">
-                    <Image
-                      src={image}
-                      className="object-contain rounded-t-md"
-                      alt={`Team ${index}`}
-                    />
-                    <CardContent className="flex flex-col items-start px-10 py-10 justify-center">
+                  <Card className="max-h-[500px] ">
+                    <User2Icon className="w-[200px] h-[200px] ml-20" />
+                    <CardContent className="flex flex-col items-start px-10 py-10 justify-center ">
                       <h1 className="font-extrabold text-3xl tracking-tighter">
-                        Saad Rehman
+                        Stephen
                       </h1>
                       <p className="text-gray-500 tracking-tighter">
                         Senior, software engineer at Agency

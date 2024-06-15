@@ -2,13 +2,14 @@ import React from "react";
 import Image from "next/image";
 import image from "@/public/ser2.webp";
 import { Button } from "./ui/button";
+
 import Link from "next/link";
 
-const ServicesCard = ({ title, description }: any) => {
+const ServicesCard = ({ title, description, images }: any) => {
   return (
     <div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-center md:justify-between md:px-20 md:gap-10">
       <div>
-        <Image src={image} alt="imageServices" width={500} height={500} />
+        <Image src={images} alt="imageServices" width={500} height={500} />
       </div>
       <div className="flex flex-col items-start justify-center gap-10 max-w-md md:px-10 md:py-20">
         <h1 className="font-extrabold text-2xl md:text-4xl tracking-tighter">

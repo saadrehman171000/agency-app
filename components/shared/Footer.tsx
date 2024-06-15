@@ -1,3 +1,4 @@
+"use client";
 import {
   GitHubLogoIcon,
   InstagramLogoIcon,
@@ -7,8 +8,11 @@ import {
 import React from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
   return (
     <footer className="bg-slate-950 text-white tracking-tighter">
       <div className="max-w-7xl mx-auto p-20 px-10 w-full">
@@ -30,18 +34,16 @@ const Footer = () => {
             <div className="flex flex-col items-start justify-center gap-2">
               <h1 className="font-bold">Company</h1>
               <div className="text-slate-400 cursor-pointer ">
-                <h1 className="hover:text-yellow-400">About us</h1>
-                <h1 className="hover:text-yellow-400">FAQ</h1>
-                <h1 className="hover:text-yellow-400">Blog</h1>
-                <h1 className="hover:text-yellow-400">Careers</h1>
-              </div>
-            </div>
-            <div className="flex flex-col items-start justify-center gap-2">
-              <h1 className="font-bold">Home</h1>
-              <div className="text-slate-400 cursor-pointer">
-                <h1 className="hover:text-yellow-400">Business</h1>
-                <h1 className="hover:text-yellow-400">Enterprise</h1>
-                <h1 className="hover:text-yellow-400">Customer Success</h1>
+                <h1 className="hover:text-yellow-400">
+                  {" "}
+                  <Link href={"/"}>Home</Link>
+                </h1>
+                <h1 className="hover:text-yellow-400">
+                  <Link href={"/about"}>About</Link>
+                </h1>
+                <h1 className="hover:text-yellow-400">
+                  <Link href={"/contact"}>Contact</Link>
+                </h1>
               </div>
             </div>
           </div>
@@ -49,16 +51,16 @@ const Footer = () => {
             <div className="flex flex-col items-start justify-center gap-2">
               <h1 className="font-bold">Locations</h1>
               <div className="text-slate-400 cursor-pointer">
-                <h1 className="hover:text-yellow-400">Austin, TX</h1>
-                <h1 className="hover:text-yellow-400">Beaverton, OR</h1>
-                <h1 className="hover:text-yellow-400">Portlan, OR</h1>
+                <h1 className="hover:text-yellow-400">California, CA</h1>
               </div>
             </div>
             <div className="flex flex-col items-start justify-center gap-2">
               <h1 className="font-bold">Resources</h1>
               <div className="text-slate-400 cursor-pointer">
-                <h1 className="hover:text-yellow-400">Forum</h1>
-                <h1 className="hover:text-yellow-400">Support</h1>
+                <h1 className="hover:text-yellow-400">
+                  {" "}
+                  <Link href={"/blog"}>Blog</Link>
+                </h1>
               </div>
             </div>
           </div>

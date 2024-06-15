@@ -42,9 +42,9 @@ const Navbar = () => {
   };
 
   const services = [
-    { name: "Service 1", link: "/service1" },
-    { name: "Service 2", link: "/service2" },
-    { name: "Service 3", link: "/service3" },
+    { name: "Medical", link: "/service1" },
+    { name: "Motorgage", link: "/service2" },
+    { name: "ACA", link: "/service3" },
   ];
 
   const handleMouseEnter = () => {
@@ -64,11 +64,11 @@ const Navbar = () => {
       <div className="flex flex-row items-center justify-between">
         <div>
           <Link href={"/"} className="tracking-tight font-bold text-lg">
-            Agency
+            Wemarket
           </Link>
         </div>
         <div className="hidden md:block">
-          <div className="flex items-center justify-center gap-10 relative">
+          <div className="flex items-center justify-center gap-10 relative text-sm">
             <Link
               className={`${pathname === "/" ? "font-bold" : "text-black"}`}
               href={"/"}

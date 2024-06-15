@@ -14,7 +14,7 @@ const Testimonials = () => {
           business.
         </p>
       </div>
-      <div className="flex flex-col gap-2 md:grid md:grid-cols-3 md:gap-3">
+      <div className="flex flex-col gap-2 md:grid md:grid-cols-3 md:gap-4">
         <TestimonialCard
           name="Sam"
           testimonial="I've been in the insurance industry for years, and I've never encountered final expense leads as promising as those from US Leads Agency. Their leads are not only top-notch but also highly responsive. They've had a profound impact on my business, and I can't recommend them highly enough!"

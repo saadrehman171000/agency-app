@@ -12,7 +12,6 @@ const about = () => {
       <Mission />
       <Banner />
       <Team />
-      <AboutTestimonial />
     </>
   );
 };
