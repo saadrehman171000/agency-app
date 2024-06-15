@@ -12,7 +12,7 @@ import React from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import map from "@/public/map.webp";
+import map from "@/public/California_map-L.jpg";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -233,8 +233,8 @@ const GetTouch = () => {
         <Image
           src={map}
           alt="map"
-          height={1000}
-          width={1000}
+          height={700}
+          width={700}
           className="rounded-md"
         />
       </div>

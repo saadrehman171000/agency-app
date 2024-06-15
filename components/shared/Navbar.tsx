@@ -68,7 +68,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="hidden md:block">
-          <div className="flex items-center justify-center gap-10 relative text-sm">
+          <div className="flex items-center justify-center gap-10 relative text-sm md:text-sm">
             <Link
               className={`${pathname === "/" ? "font-bold" : "text-black"}`}
               href={"/"}
@@ -133,7 +133,7 @@ const Navbar = () => {
                 className="cursor-pointer"
               />
             </SheetTrigger>
-            <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
+            <SheetContent className="flex flex-col gap-6 bg-white md:hidden text-sm">
               <Link href={"/"} className="tracking-tight font-bold text-lg">
                 Agency
               </Link>

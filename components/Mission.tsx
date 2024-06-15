@@ -20,8 +20,8 @@ const Mission = () => {
               alt="person"
               className="aspect-square object-cover rounded-full w-[50px] h-[50px]"
             />
-            <div className="flex flex-col items-center justify-center">
-              <h1 className="font-bold tracking-tighter">Saad Rehman</h1>
+            <div className="flex flex-col items-start justify-center">
+              <h1 className="font-bold tracking-tighter">Stephen</h1>
               <h1 className="text-gray-500 tracking-tighter font-medium">
                 CEO, Agency
               </h1>
@@ -33,9 +33,9 @@ const Mission = () => {
             {/* Your content */}
           </div>
           <h1 className="font-extrabold tracking-tighter text-2xl max-w-md">
-            &quot;Our goal is to build software that gives customer-facing teams at
-            SMBs the ability to create fruitful and enduring relationships with
-            customers.&quot;
+            &quot;Our goal is to build software that gives customer-facing teams
+            at SMBs the ability to create fruitful and enduring relationships
+            with customers.&quot;
           </h1>
         </div>
       </div>

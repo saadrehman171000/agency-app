@@ -42,8 +42,8 @@ const Team = () => {
                 className="pl-1 md:basis-1/2 lg:basis-1/3 "
               >
                 <div className="p-1">
-                  <Card className="max-h-[500px] ">
-                    <User2Icon className="w-[200px] h-[200px] ml-20" />
+                  <Card className="flex flex-col items-center max-h-[500px] ">
+                    <User2Icon className="w-[200px] h-[200px] " />
                     <CardContent className="flex flex-col items-start px-10 py-10 justify-center ">
                       <h1 className="font-extrabold text-3xl tracking-tighter">
                         Stephen
