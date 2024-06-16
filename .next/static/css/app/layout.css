@@ -872,9 +872,6 @@ video {
   .top-full {
   top: 100%;
 }
-  .-z-10 {
-  z-index: -10;
-}
   .z-10 {
   z-index: 10;
 }
@@ -909,9 +906,6 @@ video {
   margin-top: 13rem;
   margin-bottom: 13rem;
 }
-  .-ml-1 {
-  margin-left: -0.25rem;
-}
   .-ml-4 {
   margin-left: -1rem;
 }
@@ -923,9 +917,6 @@ video {
 }
   .mb-32 {
   margin-bottom: 8rem;
-}
-  .ml-20 {
-  margin-left: 5rem;
 }
   .ml-auto {
   margin-left: auto;
@@ -1049,6 +1040,9 @@ video {
 }
   .w-\[200px\] {
   width: 200px;
+}
+  .w-\[380px\] {
+  width: 380px;
 }
   .w-\[40px\] {
   width: 40px;
@@ -1275,6 +1269,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(234 179 8 / var(--tw-border-opacity));
 }
+  .border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
   .border-b-gray-300 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1328,6 +1326,10 @@ video {
   .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
+}
+  .bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
   .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
@@ -1435,9 +1437,6 @@ video {
 }
   .pb-10 {
   padding-bottom: 2.5rem;
-}
-  .pl-1 {
-  padding-left: 0.25rem;
 }
   .pl-4 {
   padding-left: 1rem;
@@ -1985,10 +1984,6 @@ video {
     margin-top: 2.5rem;
   }
 
-  .md\:ml-20 {
-    margin-left: 5rem;
-  }
-
   .md\:block {
     display: block;
   }
@@ -2003,10 +1998,6 @@ video {
 
   .md\:w-1\/2 {
     width: 50%;
-  }
-
-  .md\:basis-1\/2 {
-    flex-basis: 50%;
   }
 
   .md\:grid-cols-2 {
@@ -2116,27 +2107,18 @@ video {
     line-height: 1;
   }
 
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 
-  .md\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
   @media (min-width: 1024px) {
-
-  .lg\:basis-1\/3 {
-    flex-basis: 33.333333%;
-  }
 
   .lg\:px-36 {
     padding-left: 9rem;

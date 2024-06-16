@@ -34,37 +34,24 @@ const Team = () => {
         </h1>
       </div>
       <div className="mt-10 ">
-        <Carousel className="-z-10 ">
-          <CarouselContent className="-ml-1   ">
-            {brands.map((image, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-1 md:basis-1/2 lg:basis-1/3 "
-              >
-                <div className="p-1">
-                  <Card className="flex flex-col items-center max-h-[500px] ">
-                    <User2Icon className="w-[200px] h-[200px] " />
-                    <CardContent className="flex flex-col items-start px-10 py-10 justify-center ">
-                      <h1 className="font-extrabold text-3xl tracking-tighter">
-                        Stephen
-                      </h1>
-                      <p className="text-gray-500 tracking-tighter">
-                        Senior, software engineer at Agency
-                      </p>
-                      <div className="flex gap-2 mt-10">
-                        <InstagramLogoIcon className="w-8 h-8" />
-                        <TwitterLogoIcon className="w-8 h-8" />
-                        <LinkedInLogoIcon className="w-8 h-8" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        <div className="flex flex-col items-center p-1   ">
+          <Card className="w-[380px] flex flex-col items-center justify-center max-h-[500px] hover:scale-105 transition duration-150 border-gray-500 shadow-lg ">
+            <User2Icon className="w-[200px] h-[200px]  " />
+            <CardContent className="flex flex-col items-start px-10 py-10 justify-center ">
+              <h1 className="font-extrabold text-3xl tracking-tighter">
+                Stephen
+              </h1>
+              <p className="text-gray-500 tracking-tighter">
+                Senior, software engineer at Agency
+              </p>
+              <div className="flex gap-2 mt-10">
+                <InstagramLogoIcon className="w-8 h-8" />
+                <TwitterLogoIcon className="w-8 h-8" />
+                <LinkedInLogoIcon className="w-8 h-8" />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
